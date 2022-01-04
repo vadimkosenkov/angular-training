@@ -3,10 +3,15 @@
 <!-- used a number value 18 for a property [style.fontSize.px]=-->
 <!-- used a variable {{x}} and  {{user.name}} from user.components.ts  -->
 
+<!-- used an event-handler 'click' -->
+
 <div
   [class]="myColor"
   [style.backgroundColor]="'pink'"
   [style.fontSize.px]="18"
+  [style.fontWeight]="myFontWeight"
+  (click)="myColor = 'dark'"
+  (click)="changeFontWeight(600)"
 >
   user works! {{ x }}, {{ user.name }}
 </div>

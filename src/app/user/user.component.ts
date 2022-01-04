@@ -13,16 +13,22 @@ export class UserComponent implements OnInit {
     name: "Vadim",
   };
   //new style variable
-  public myColor = "color-dark";
+  public myColor = "dark";
+  //new style variable
+  public myFontWeight = 400;
 
   constructor() {
     // changing the value of a variable myColor
     setTimeout(() => {
-      this.myColor = "color-light";
+      this.myColor = "light";
       setTimeout(() => {
-        this.myColor = "color-bright";
-      }, 2000);
-    }, 2000);
+        this.myColor = "bright";
+      }, 1000);
+    }, 1000);
+  }
+  // changing the value of a variable myFontWeight(type number)
+  changeFontWeight(weight: number) {
+    this.myFontWeight = weight;
   }
 
   ngOnInit(): void {}
