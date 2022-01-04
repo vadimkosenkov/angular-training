@@ -6,19 +6,14 @@ import { Component, OnInit } from "@angular/core";
   styleUrls: ["./user.component.scss"],
 })
 export class UserComponent implements OnInit {
-  //new variable
   public x = "congratulation";
-  //new variable
   public user = {
     name: "Vadim",
   };
-  //new style variable
   public myColor = "dark";
-  //new style variable
   public myFontWeight = 400;
 
   constructor() {
-    // changing the value of a variable myColor
     setTimeout(() => {
       this.myColor = "light";
       setTimeout(() => {
@@ -26,9 +21,12 @@ export class UserComponent implements OnInit {
       }, 1000);
     }, 1000);
   }
-  // changing the value of a variable myFontWeight(type number)
   changeFontWeight(weight: number) {
     this.myFontWeight = weight;
+  }
+  // used a method changeName for a variable user
+  changeName(name: string) {
+    this.user.name = name;
   }
 
   ngOnInit(): void {}

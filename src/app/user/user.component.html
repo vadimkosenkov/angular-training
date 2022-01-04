@@ -1,10 +1,3 @@
-<!-- used a variable myColor from user.components.ts for a [class] -->
-<!-- used a string value 'pink' for a property [style.backgroundColor]=-->
-<!-- used a number value 18 for a property [style.fontSize.px]=-->
-<!-- used a variable {{x}} and  {{user.name}} from user.components.ts  -->
-
-<!-- used an event-handler 'click' -->
-
 <div
   [class]="myColor"
   [style.backgroundColor]="'pink'"
@@ -15,3 +8,5 @@
 >
   user works! {{ x }}, {{ user.name }}
 </div>
+<input type="text" #inputValue placeholder="enter font size..." />
+<button (click)="changeName(inputValue.value)">Confirm</button>
