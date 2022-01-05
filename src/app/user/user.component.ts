@@ -9,6 +9,7 @@ export class UserComponent implements OnInit {
   public x = "congratulation";
   public user = {
     name: "Vadim",
+    age: 31,
   };
   public myColor = "dark";
   public myFontWeight = 400;
@@ -24,7 +25,6 @@ export class UserComponent implements OnInit {
   changeFontWeight(weight: number) {
     this.myFontWeight = weight;
   }
-  // used a method changeName for a variable user
   changeName(name: string) {
     this.user.name = name;
   }

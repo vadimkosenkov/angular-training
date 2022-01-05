@@ -8,5 +8,7 @@
 >
   user works! {{ x }}, {{ user.name }}
 </div>
-<input type="text" #inputValue placeholder="enter font size..." />
+<input type="text" #inputValue placeholder="enter your name..." />
 <button (click)="changeName(inputValue.value)">Confirm</button>
+
+<app-user-card [user]="user"></app-user-card>
