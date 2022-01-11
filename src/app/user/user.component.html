@@ -8,7 +8,18 @@
 >
   user works! {{ x }}, {{ user.name }}
 </div>
-<input type="text" #inputValue placeholder="enter your name..." />
-<button (click)="changeName(inputValue.value)">Confirm</button>
+<div>
+  <input type="text" #inputValue placeholder="enter your name..." />
+  <button (click)="changeName(inputValue.value)">Confirm</button>
+</div>
 
-<app-user-card [user]="user"></app-user-card>
+<!-- used directive *ngIf -->
+<app-user-card *ngIf="!!isShown" [user]="user"></app-user-card>
+<button (click)="toggleShown()">Hide age</button>
+
+<!-- used directive *ngfor -->
+<ul>
+  <li *ngFor="let i of friends">
+    {{ i.name }}
+  </li>
+</ul>

@@ -13,6 +13,8 @@ export class UserComponent implements OnInit {
   };
   public myColor = "dark";
   public myFontWeight = 400;
+  public isShown = true;
+  public friends = [{ name: "Alice" }, { name: "Max" }, { name: "Bob" }];
 
   constructor() {
     setTimeout(() => {
@@ -27,6 +29,9 @@ export class UserComponent implements OnInit {
   }
   changeName(name: string) {
     this.user.name = name;
+  }
+  toggleShown() {
+    this.isShown = !this.isShown;
   }
 
   ngOnInit(): void {}
