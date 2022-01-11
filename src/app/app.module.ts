@@ -7,13 +7,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { UserComponent } from './user/user.component';
 import { UserCardComponent } from './user/user-card/user-card.component';
 import { ItemComponent } from './item/item.component';
+import { ColoryDirective } from './colory.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     UserComponent,
     UserCardComponent,
-    ItemComponent
+    ItemComponent,
+    ColoryDirective
   ],
   imports: [
     BrowserModule,
