@@ -19,7 +19,7 @@ export class UserComponent implements OnInit {
   public friends = [
     { name: "Alice", age: 22 },
     { name: "Max", age: 24 },
-    { name: "Bob", age: 36 },
+    { name: "Bob", age: 26 },
   ];
 
   constructor() {
@@ -39,8 +39,10 @@ export class UserComponent implements OnInit {
   toggleShown() {
     this.isShown = !this.isShown;
   }
+
   toggleAge() {
     this.isAgeShown = !this.isAgeShown;
   }
+
   ngOnInit(): void {}
 }
