@@ -1,5 +1,5 @@
 <div (click)="selectFriend()">
-  <span>{{ friend.name }}</span>
+  <span class="friend-name">{{ friend.name }}</span>
   <span *ngIf="isAgeShown"> is {{ friend.age }} years old </span>
   <button (click)="toggleAge()">Hide this age</button>
 </div>
