@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from "@angular/core";
+import { Component, Input, OnInit, Output, EventEmitter } from "@angular/core";
 
 @Component({
   selector: "app-user-card",
@@ -6,9 +6,16 @@ import { Component, Input, OnInit } from "@angular/core";
   styleUrls: ["./user-card.component.scss"],
 })
 export class UserCardComponent implements OnInit {
-  @Input() user: any;
+  @Input() friend: any;
+  @Input() isAgeShown: any;
+  @Input() toggleAge: any;
+  @Output() friendSelected: EventEmitter<any> = new EventEmitter();
 
   constructor() {}
+
+  selectFriend() {
+    this.friendSelected.emit();
+  }
 
   ngOnInit(): void {}
 }

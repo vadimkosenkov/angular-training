@@ -6,20 +6,24 @@
   (click)="myColor = 'dark'"
   (click)="changeFontWeight(600)"
 >
-  user works! {{ x }}, {{ user.name }}
+  It works! {{ x }}, {{ user.name }}
 </div>
 <div>
   <input type="text" #inputValue placeholder="enter your name..." />
   <button (click)="changeName(inputValue.value)">Confirm</button>
 </div>
+<div *ngIf="isShown">I am years {{ user.age }} old</div>
+<button (click)="toggleShown()">Hide my age</button>
 
-<!-- used directive *ngIf -->
-<app-user-card *ngIf="!!isShown" [user]="user"></app-user-card>
-<button (click)="toggleShown()">Hide age</button>
-
-<!-- used directive *ngfor -->
 <ul>
-  <li *ngFor="let i of friends">
-    {{ i.name }}
+  <li *ngFor="let friend of friends">
+    <app-user-card
+      [toggleAge]="toggleAge"
+      [isAgeShown]="isAgeShown"
+      [friend]="friend"
+      (friendSelected)="selectedFriend = friend"
+    ></app-user-card>
   </li>
 </ul>
+
+<h1>EventEmitter works? {{ selectedFriend?.name }} says yes</h1>

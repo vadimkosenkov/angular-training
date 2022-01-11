@@ -7,14 +7,20 @@ import { Component, OnInit } from "@angular/core";
 })
 export class UserComponent implements OnInit {
   public x = "congratulation";
+  public myColor = "dark";
+  public myFontWeight = 400;
+  public isShown = true;
+  public isAgeShown = true;
+  public selectedFriend: any;
   public user = {
     name: "Vadim",
     age: 31,
   };
-  public myColor = "dark";
-  public myFontWeight = 400;
-  public isShown = true;
-  public friends = [{ name: "Alice" }, { name: "Max" }, { name: "Bob" }];
+  public friends = [
+    { name: "Alice", age: 22 },
+    { name: "Max", age: 24 },
+    { name: "Bob", age: 36 },
+  ];
 
   constructor() {
     setTimeout(() => {
@@ -33,6 +39,8 @@ export class UserComponent implements OnInit {
   toggleShown() {
     this.isShown = !this.isShown;
   }
-
+  toggleAge() {
+    this.isAgeShown = !this.isAgeShown;
+  }
   ngOnInit(): void {}
 }
