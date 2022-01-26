@@ -8,6 +8,7 @@ import { UserComponent } from './user/user.component';
 import { UserCardComponent } from './user/user-card/user-card.component';
 import { ItemComponent } from './item/item.component';
 import { ColoryDirective } from './colory.directive';
+import { DelayDirective } from './delay.directive';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { ColoryDirective } from './colory.directive';
     UserComponent,
     UserCardComponent,
     ItemComponent,
-    ColoryDirective
+    ColoryDirective,
+    DelayDirective
   ],
   imports: [
     BrowserModule,
