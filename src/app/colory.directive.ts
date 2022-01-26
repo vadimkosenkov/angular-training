@@ -2,6 +2,7 @@ import { Directive, HostBinding, HostListener } from "@angular/core";
 
 @Directive({
   selector: "[appColory]",
+  exportAs: "colory",
 })
 export class ColoryDirective {
   private counter: number = 0;
@@ -10,9 +11,13 @@ export class ColoryDirective {
   @HostBinding("style.color") myColor: string;
   //декоратор HostListener служит для обработки событий элемента, но который повесили директиву
   @HostListener("click", ["$event"]) changeColor() {
-    this.myColor = "#" + Math.floor(Math.random() * 16777215).toString(16);
+    this.setRandomColor();
     this.counter++;
     console.log(this.counter);
+  }
+
+  setRandomColor() {
+    this.myColor = "#" + Math.floor(Math.random() * 16777215).toString(16);
   }
 
   constructor() {

@@ -1,3 +1,4 @@
 <app-user></app-user>
-<div appColory>Some text for testing directive, click me!</div>
+<span appColory #colory="colory">Some text for testing directive </span>
+<button (click)="colory.setRandomColor()">change text color!</button>
 <div *appDelay>Example for Delay directive</div>
