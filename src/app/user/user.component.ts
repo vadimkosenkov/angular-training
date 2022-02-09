@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+import { UserService } from "../services/user.service";
 
 @Component({
   selector: "app-user",
@@ -12,17 +13,14 @@ export class UserComponent implements OnInit {
   public isShown = true;
   public isAgeShown = true;
   public selectedFriend: any;
+  public friends: any;
+
   public user = {
     name: "Vadim",
     age: 31,
   };
-  public friends = [
-    { name: "Alice", age: 22 },
-    { name: "Max", age: 24 },
-    { name: "Bob", age: 26 },
-  ];
 
-  constructor() {
+  constructor(private userService: UserService) {
     setTimeout(() => {
       this.myColor = "light";
       setTimeout(() => {
@@ -44,5 +42,7 @@ export class UserComponent implements OnInit {
     this.isAgeShown = !this.isAgeShown;
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.friends = this.userService.getAll();
+  }
 }
