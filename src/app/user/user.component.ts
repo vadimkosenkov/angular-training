@@ -45,4 +45,12 @@ export class UserComponent implements OnInit {
   ngOnInit(): void {
     this.friends = this.userService.getAll();
   }
+  removeUser(name: string) {
+    this.userService.remove(name);
+    this.friends = this.userService.getAll();
+  }
+  addUser(name: string) {
+    // this.userService.add(name);
+    this.friends = this.userService.getAll();
+  }
 }

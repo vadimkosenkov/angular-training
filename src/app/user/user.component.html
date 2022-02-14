@@ -23,8 +23,12 @@
       [friend]="friend"
       (friendSelected)="selectedFriend = friend"
     ></app-user-card>
+    <button (click)="removeUser(friend.name)">delete</button>
   </li>
 </ul>
+<input type="text" #userName />
+<!-- <button (click)="addUser(userName.value);userName.value=''">add user</button> -->
+<button>add user</button>
 
 <h1>EventEmitter works? {{ selectedFriend?.name }} says yes</h1>
 

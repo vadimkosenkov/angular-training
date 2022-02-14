@@ -15,4 +15,13 @@ export class UserService {
   public getAll() {
     return this.friends;
   }
+  public remove(name: string) {
+    return (this.friends = this.friends.filter(
+      (friend) => friend.name !== name
+    ));
+  }
+  public add(name: string, age: number) {
+    if (!name || !age) return;
+    this.friends.push({ name, age });
+  }
 }
