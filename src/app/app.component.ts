@@ -1,4 +1,4 @@
-import { UserService } from "./user.service";
+import { HttpClient } from "@angular/common/http";
 import { Component } from "@angular/core";
 
 @Component({
@@ -8,9 +8,7 @@ import { Component } from "@angular/core";
 })
 export class AppComponent {
   title = "angular-training";
-  constructor(private userService: UserService) {}
-
-  getNumber(): number {
-    return this.userService.getRandomNumber();
+  constructor(_http: HttpClient) {
+    _http.get("https://api.github.com/search/users").subscribe((result) => console.log(result));
   }
 }
