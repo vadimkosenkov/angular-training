@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { UserService } from "../services/user.service";
+import { UserInterface, UserService } from "../services/user.service";
 
 @Component({
   selector: "app-user",
@@ -19,6 +19,8 @@ export class UserComponent implements OnInit {
     name: "Vadim",
     age: 31,
   };
+
+  public users: Array<UserInterface> = [];
 
   constructor(private userService: UserService) {
     setTimeout(() => {
@@ -42,8 +44,14 @@ export class UserComponent implements OnInit {
     this.isAgeShown = !this.isAgeShown;
   }
 
-  ngOnInit(): void {
+  ngOnInit() {
     this.friends = this.userService.getAll();
+    this.userService
+      .getUsersFromJsonPlaceholder()
+      .subscribe((users: Array<UserInterface>) => {
+        this.users = users;
+        console.log(users);
+      });
   }
   removeUser(name: string) {
     this.userService.remove(name);
