@@ -8,9 +8,5 @@ import { Router } from "@angular/router";
 })
 export class AppComponent {
   title = "angular-training";
-  constructor(private router: Router) {}
-
-  clickFunc() {
-    this.router.navigateByUrl("users/some-user");
-  }
+  constructor() {}
 }
